@@ -2,10 +2,10 @@ import { ApolloClient, ApolloProvider, HttpLink, InMemoryCache } from "@apollo/c
 import { useRouter } from "next/router";
 import nextWithApollo from "next-with-apollo";
 
-const withApollo = nextWithApollo(
+export const withApollo = nextWithApollo(
   ({ initialState, headers }) => {
     return new ApolloClient({
-      ssrMode: typeof window === "undefined", //nodejs는 window object가 없음
+      ssrMode: typeof window === undefined, //nodejs는 window object가 없음
       link: new HttpLink({
         uri: "https://rickandmortyapi.com/graphql",
       }),
@@ -17,6 +17,7 @@ const withApollo = nextWithApollo(
   },
   {
     render: ({ Page, props }) => {
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       const router = useRouter();
       return (
         <ApolloProvider client={props.apollo}>

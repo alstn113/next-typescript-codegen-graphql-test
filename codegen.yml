@@ -7,8 +7,6 @@ generates:
     config:
       reactApolloVersion: 3
       withHooks: true
-      avoidOptionals: true
-
     plugins:
       - add:
           content: "// THIS IS A GENERATED FILE, use `yarn codegen` to regenerate"

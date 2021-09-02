@@ -20,5 +20,5 @@ images: {
 domains: ["rickandmortyapi.com"],
 },
 
-typescript 빨간 불 들어와서 짜증나네
-codegen 버전 업데이트되면서 예제랑 너무 다른듯
+- nextconfig.js에서 type~어쩌구랑 strict지우기
+- tsconfig에서 strict : false로 바꾸기
